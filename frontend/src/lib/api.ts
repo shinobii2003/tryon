@@ -1,6 +1,8 @@
 import { TryOnRequest } from "@/types";
 
-const API_BASE_URL = "http://127.0.0.1:8080";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8080";
+
 
 export async function tryOnGarment(request: TryOnRequest): Promise<Blob> {
   const formData = new FormData();
