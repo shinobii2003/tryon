@@ -126,14 +126,15 @@ async def try_on(
         torch.cuda.empty_cache()
 
         # Resize images for lower VRAM usage
-        person.thumbnail((512, 512))
-        garment.thumbnail((512, 512))
+        person.thumbnail((384,384))
+        garment.thumbnail((384, 384))
 
         # Run inference
         result = pipeline(
             person_image=person,
             garment_image=garment,
             category=category,
+            num_inference_steps=6
         )
 
         # Convert output image to bytes
