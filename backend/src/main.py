@@ -134,7 +134,7 @@ async def try_on(
             person_image=person,
             garment_image=garment,
             category=category,
-            num_inference_steps=6
+            
         )
 
         # Convert output image to bytes
