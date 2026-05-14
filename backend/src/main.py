@@ -139,6 +139,7 @@ async def try_on(
 
         # Convert output image to bytes
         output_image = result.images[0]
+        output_image.save("generated_output.png")
 
         img_byte_arr = io.BytesIO()
         output_image.save(img_byte_arr, format="PNG")
